@@ -429,5 +429,5 @@ plt.suptitle("Resultados Finais do Skate Masculino nas Olimpíadas de 2024 em Pa
 
 # Mostrar o gráfico
 plt.show()
-
 ```
+## Fontes de Dados: https://olympics.com/pt/paris-2024/resultados/skate
