@@ -254,6 +254,55 @@ plt.suptitle("Resultados Finais do Skate Feminino nas Olimpíadas de 2024 em Par
 plt.show()
 
 ```
+## Armazenamento de Dados no Delta Lake do Databricks
+Os dados de skate das Olimpíadas de Paris 2024 são processados com PySpark e armazenados em tabelas Delta Lake para análise eficiente e gestão dos dados.
+![image](https://github.com/user-attachments/assets/e5b4ed91-bd1f-481f-9e08-45f63e6d0ce9)
+![image](https://github.com/user-attachments/assets/b640f7eb-538f-42fc-86eb-a1ccfe6c687f)
+
+```markdown
+from pyspark.sql.functions import col
+
+# Dados de exemplo para renomeação
+# Colunas estão sendo renomeadas para remover espaços e garantir a conformidade
+
+# Renomeação para df_feminino
+df_feminino_renamed = df_feminino \
+    .withColumnRenamed("Genero", "Genero") \
+    .withColumnRenamed("Nome", "Nome") \
+    .withColumnRenamed("Rank", "Rank") \
+    .withColumnRenamed("Run 1", "Run_1") \
+    .withColumnRenamed("Run 2", "Run_2") \
+    .withColumnRenamed("Trick  2", "Trick_2") \
+    .withColumnRenamed("Trick  3", "Trick_3") \
+    .withColumnRenamed("Trick 1", "Trick_1") \
+    .withColumnRenamed("Trick 4", "Trick_4") \
+    .withColumnRenamed("Trick 5", "Trick_5") \
+    .withColumnRenamed("code", "code")
+
+# Renomeação para df_masculino
+df_masculino_renamed = df_masculino \
+    .withColumnRenamed("Genero", "Genero") \
+    .withColumnRenamed("Nome", "Nome") \
+    .withColumnRenamed("Rank", "Rank") \
+    .withColumnRenamed("Run 1", "Run_1") \
+    .withColumnRenamed("Run 2", "Run_2") \
+    .withColumnRenamed("Trick  2", "Trick_2") \
+    .withColumnRenamed("Trick  3", "Trick_3") \
+    .withColumnRenamed("Trick 1", "Trick_1") \
+    .withColumnRenamed("Trick 4", "Trick_4") \
+    .withColumnRenamed("Trick 5", "Trick_5") \
+    .withColumnRenamed("code", "code")
+
+# Salvar DataFrame feminino renomeado em uma tabela
+df_feminino_renamed.write.format('delta').mode('overwrite').saveAsTable('bronze.olimpiadasdeskate_feminino')
+
+# Salvar DataFrame masculino renomeado em uma tabela
+df_masculino_renamed.write.format('delta').mode('overwrite').saveAsTable('bronze.olimpiadasdeskate_masculino')
+
+
+
+```
+
 ## Visualização dos resultados para skate feminino
 ![image](https://github.com/user-attachments/assets/37c445f4-8013-4429-aa34-ad7446e89790)
 
