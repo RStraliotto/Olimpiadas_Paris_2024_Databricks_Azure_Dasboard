@@ -1,6 +1,14 @@
 # Análise e Visualização dos Resultados do Skate nas Olimpíadas de Paris 2024
 Este repositório contém um projeto dedicado à análise e visualização dos resultados das competições de skate feminino e masculino nas Olimpíadas de Paris 2024. Utilizando Python e Azure Databricks, o projeto explora os dados das competições para fornecer insights detalhados sobre o desempenho dos atletas e a contribuição de cada país.
 
+## Dataviz
+
+![image](https://github.com/user-attachments/assets/37f9c7bd-3434-4572-8af6-fbf5a1ed8ef3)
+
+
+
+
+
 ##Configurações da conta de armazenamento | Configuração da URL do Data Lake | Configurações para a autenticação | Montar o contêiner "paris2024" no Databricks 
 
 ```markdown
